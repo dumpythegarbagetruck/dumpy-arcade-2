@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Fredoka", Arial, sans-serif;
+  background: linear-gradient(to bottom, #b9ecff, #eafcff);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px 15px;
+}
+
+.game-wrapper {
+  width: 100%;
+  max-width: 950px;
+  text-align: center;
+  background: #ffffff;
+  border: 8px solid #79d84c;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 8px 0 #b9e69e;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #2f8f3a;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 0 #dff7ae;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #4c6b57;
+  margin-bottom: 18px;
+}
+
+.info-bar {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.info-box {
+  min-width: 140px;
+  background: #fff7bf;
+  border: 4px solid #ffd54a;
+  border-radius: 22px;
+  padding: 12px 20px;
+  box-shadow: 0 5px 0 #e8bf37;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-label {
+  font-size: 0.95rem;
+  color: #7a6417;
+  margin-bottom: 4px;
+}
+
+.info-box span:last-child {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2f5f34;
+}
+
+#game-area {
+  position: relative;
+  width: 800px;
+  max-width: 100%;
+  min-height: 540px;
+  margin: 0 auto 20px;
+  border: 8px solid #48b04d;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #cfefff;
+  background-image: url("images/background.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.25);
+  padding: 30px 20px 20px;
+}
+
+#dumpy {
+  position: absolute;
+  bottom: 10px;
+  left: 18px;
+  width: 180px;
+  max-width: 28%;
+  user-select: none;
+  pointer-events: none;
+}
+
+.item-area {
+  background: rgba(255, 255, 255, 0.94);
+  border: 5px solid #ffd54a;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 6px 0 #e8bf37;
+}
+
+.prompt-text {
+  font-size: 1.2rem;
+  color: #2f5f34;
+  margin-bottom: 16px;
+}
+
+#current-item {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: none;
+  margin: 0 auto;
+}
+
+.bins {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding-bottom: 120px;
+}
+
+.bin-btn {
+  min-width: 190px;
+  padding: 18px 20px;
+  font-size: 1.15rem;
+  font-family: "Fredoka", Arial, sans-serif;
+  font-weight: 700;
+  border-radius: 24px;
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: transform 0.12s ease;
+}
+
+.bin-btn:hover {
+  transform: translateY(-3px);
+}
+
+.trash-bin {
+  background: #d9d9d9;
+  border-color: #9a9a9a;
+  color: #3d3d3d;
+  box-shadow: 0 5px 0 #8a8a8a;
+}
+
+.recycle-bin {
+  background: #7ee081;
+  border-color: #42b94b;
+  color: #1e5b26;
+  box-shadow: 0 5px 0 #389a40;
+}
+
+#start-btn {
+  background: linear-gradient(to bottom, #ffd95c, #ffbe2e);
+  color: #6a4a00;
+  border: 4px solid #f2a900;
+  padding: 14px 28px;
+  font-size: 1.15rem;
+  font-family: "Fredoka", Arial, sans-serif;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #d68d00;
+  transition: transform 0.1s ease;
+}
+
+#start-btn:hover {
+  transform: translateY(-2px);
+}
+
+#start-btn:active {
+  transform: translateY(1px);
+}
+
+#start-btn:disabled {
+  background: #ffd98f;
+  border-color: #e5bb63;
+  color: #8b6d32;
+  box-shadow: 0 5px 0 #c9a25a;
+  cursor: not-allowed;
+}
+
+#message {
+  margin-top: 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  min-height: 34px;
+}
+
+.message-win {
+  color: #248a3d;
+}
+
+.message-lose {
+  color: #d86b1f;
+}
+
+.message-correct {
+  color: #248a3d;
+}
+
+.message-wrong {
+  color: #d86b1f;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  #game-area {
+    min-height: 480px;
+  }
+
+  #dumpy {
+    width: 160px;
+  }
+
+  #current-item {
+    width: 100px;
+    height: 100px;
+  }
+
+  .bin-btn {
+    min-width: 150px;
+    font-size: 1rem;
+  }
+}
