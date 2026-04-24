@@ -1,1 +1,0 @@
-console.log("Dumpy Arcade menu loaded.");
